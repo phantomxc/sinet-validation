@@ -18,7 +18,9 @@
         }
     };
     if ( isAngular ) {
-        angular.module( 'sinet-validation', [] ).factory( 'SinetValidation', constraints );
+        angular.module( 'sinet.validation', [] ).factory( 'SinetValidation', function () {
+            return constraints;
+        } );
     } else if ( isNode ) {
         module.exports = constraints;
     }
